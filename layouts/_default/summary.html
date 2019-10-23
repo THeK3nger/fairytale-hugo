@@ -1,8 +1,24 @@
 <a href="{{ .Permalink }}" class="catalogue-item">
     <div>
-        <time datetime="{{ .PublishDate }}" class="catalogue-time">{{ i18n "publishdate" . }}</time>
-        <h1 class="catalogue-title">{{ .Title }}</h1>
-        <div class="catalogue-line"></div>
+
+        {{- $image := .Resources.GetMatch "header" -}}
+        {{ if $image }}
+            {{ $image := $image.Fill "800x300 smart" }}
+            {{ $imageUrl := $image.Permalink }}
+            {{ $.Scratch.Set "imageUrl" $imageUrl }}
+        {{ end }}
+
+        {{ $img := $.Scratch.Get "imageUrl" }}
+
+        <div style=" border-radius: 25px; position: relative; height: 300px; background-image: url('{{$img}}')">
+
+            <div style="background-color: #FFFFFFCC; position: absolute; bottom: 0px; width: 100%; padding: 20px">
+                <time datetime="{{ .PublishDate }}" class="catalogue-time">{{ i18n "publishdate" . }}</time>
+                <h1 class="catalogue-title">{{ .Title }}</h1>
+                <div class="catalogue-line"></div>
+            </div>
+
+        </div>
 
         <p>
             {{ if isset .Params "summary" }}{{ .Params.Summary | markdownify }}{{ else }}{{ .Summary }}{{ end }}
