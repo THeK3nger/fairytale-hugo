@@ -1,11 +1,22 @@
 {{ define "main" }}
 
+{{- $image := .Resources.GetMatch "header" -}}
+{{ if $image }}
+    {{ $image := $image.Fill "1280x60 smart" }}
+    {{ $imageUrl := $image.Permalink }}
+    {{ $.Scratch.Set "imageUrl" $imageUrl }}
+{{ end }}
+
+{{ $img := $.Scratch.Get "imageUrl" }}
+
+<div class="post-featured-image" style="background-image: url('{{$img}}')"></div>
+
 <main>
 	<div class="post">
-		{{ partial "single/post-info.html" . }}
-		{{ partial "single/title.html" . }}
+        {{ partial "single/post-info.html" . }}
+        {{ partial "single/title.html" . }}
 
-		{{ partial "single/header.html" . }}
+        {{ partial "single/header.html" . }}
 
 		{{ .Content }}
 
