@@ -12,7 +12,7 @@
         <time datetime="{{ .PublishDate }}" class="catalogue-time">{{ i18n "publishdate" . }}</time>
         <h1 class="catalogue-title">{{ .Title }}</h1>
         <div class="catalogue-line"></div>
-        <img src="{{$img}}" />
+        <img class="catalogue-image" src="{{$img}}" />
         </a>
 
         {{ if isset .Params "summary" }}{{ .Params.Summary | markdownify }}{{ else }}{{ .Summary }}{{ end }}
