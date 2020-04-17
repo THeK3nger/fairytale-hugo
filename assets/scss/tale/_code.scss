@@ -25,10 +25,17 @@ pre code {
 
 .highlight {
   background-color: $grey-3;
-  border-radius: 3px;
+  border-radius: 10px;
   line-height: 1.4;
   margin: 0 0 1rem;
   padding: 1rem;
+  border-width: 2px;
+  border-style: solid;
+  border-color: $grey-1;
+
+  div {
+      padding: 10px;
+  }
 
   pre {
     margin-bottom: 0;
