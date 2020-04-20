@@ -19,8 +19,17 @@ footer,
 
   &-container {
     margin: 1rem auto;
-    position: relative;
-    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &-logo {
+      display: flex;
+      flex-basis: 150px;
+  }
+
+  &-menu {
+      flex-grow: 1;
   }
 
   &-title {
@@ -37,10 +46,11 @@ footer,
   }
 
   ul {
-    list-style-type: none;
-    margin: 1rem 0 0;
     padding: 0;
-    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-evenly;
   }
 
   li {
@@ -48,7 +58,6 @@ footer,
     color: $default-color;
     display: inline-block;
     opacity: .6;
-    padding: 0 2rem 0 0;
 
     &:last-child {
       padding-right: 0;
@@ -70,12 +79,6 @@ footer,
   .nav {
     &-container {
       text-align: left;
-    }
-
-    ul {
-      bottom: 0;
-      position: absolute;
-      right: 0;
     }
   }
 }

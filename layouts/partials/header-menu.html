@@ -1,12 +1,14 @@
-<ul>
-    {{ $currentPage := . }}
-    {{ range .Site.Menus.main }}
-        <li>
-            <a href="{{ .URL }}">
-                {{ .Pre }}
-                <span>{{ .Name }}</span>
-                {{ .Post }}
-            </a>
-        </li>
-    {{ end }}
-</ul>
+<div class="nav-menu">
+    <ul>
+        {{ $currentPage := . }}
+        {{ range .Site.Menus.main }}
+            <li>
+                <a href="{{ .URL }}">
+                    {{ .Pre }}
+                    <span>{{ .Name }}</span>
+                    {{ .Post }}
+                </a>
+            </li>
+        {{ end }}
+    </ul>
+</div>
