@@ -1,8 +1,12 @@
 <div  class="catalogue-item">
     
+        {{ $cropMethod := .Params.crop }}
+        {{ if not $cropMethod}}
+        {{ $cropMethod = "smart" }}
+        {{ end }}
         {{- $image := .Resources.GetMatch "header" -}}
         {{ if $image }}
-            {{ $image := $image.Fill "800x300 smart" }}
+            {{ $image := $image.Fill (print "800x300" " " $cropMethod) }}
             {{ $imageUrl := $image.Permalink }}
             {{ $.Scratch.Set "imageUrl" $imageUrl }}
         {{ end }}
