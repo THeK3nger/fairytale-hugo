@@ -30,4 +30,16 @@
         
         {{ partial "headers/mathjax.html" . }}
         {{ partial "headers/twitter_card.html" . }}
+
+        <script>
+            function toggleDiv(id) {
+                const div = document.getElementById(id);
+                console.log(typeof div.style.display)
+                if (div.style.display === "initial") {
+                    div.style.display = "none";
+                } else {
+                    div.style.display = "initial";
+                }
+            }
+        </script>
 	</head>

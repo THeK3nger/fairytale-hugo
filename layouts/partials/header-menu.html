@@ -1,4 +1,4 @@
-<div class="nav-menu">
+<div class="nav-menu" id="menu">
     <ul>
         {{ $currentPage := . }}
         {{ range .Site.Menus.main }}
@@ -11,4 +11,7 @@
             </li>
         {{ end }}
     </ul>
+</div>
+<div class="nav-hamburger" onclick="toggleDiv('menu')">
+   <img src="/images/menu_icon.svg"></img>
 </div>
