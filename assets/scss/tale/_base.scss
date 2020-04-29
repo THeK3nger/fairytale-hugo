@@ -11,7 +11,8 @@ body {
   line-height: 1.5;
 }
 
-html {
+body {
+  -webkit-text-size-adjust: 100%;
   font-family: $serif-primary;
   font-size: 14px;
   overflow-y: scroll;
@@ -19,10 +20,6 @@ html {
   @media (min-width: 600px) {
     font-size: 16px;
   }
-}
-
-body {
-  -webkit-text-size-adjust: 100%;
 }
 
 h1,
@@ -33,7 +30,6 @@ h5,
 h6 {
   color: $default-shade;
   font-family: $sans-serif;
-  line-height: normal;
 }
 
 a {
@@ -58,7 +54,6 @@ blockquote {
 
 img {
   display: block;
-  margin: 0 0 1rem;
   max-width: 100%;
 }
 

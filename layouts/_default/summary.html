@@ -6,7 +6,7 @@
         {{ end }}
         {{- $image := .Resources.GetMatch "header" -}}
         {{ if $image }}
-            {{ $image := $image.Fill (print "800x300" " " $cropMethod) }}
+            {{ $image := $image.Fill (print "900x405" " " $cropMethod) }}
             {{ $imageUrl := $image.Permalink }}
             {{ $.Scratch.Set "imageUrl" $imageUrl }}
         {{ end }}
@@ -18,7 +18,7 @@
         <div class="catalogue-line"></div>
         <img class="catalogue-image" src="{{$img}}" />
         </a>
-
+        <p class="catalogue-summary text-justify">
         {{ if isset .Params "summary" }}{{ .Params.Summary | markdownify }}{{ else }}{{ .Summary }}{{ end }}
-    
+        </p>
 </div>

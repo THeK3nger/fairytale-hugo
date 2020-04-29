@@ -1,13 +1,16 @@
 <head>
 		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		{{- if .IsHome }}
 			<meta name="description" content="{{ .Site.Params.Description }}">
 		{{- else if .Description }}
 			<meta name="description" content="{{ .Description }}">
-		{{- end }}
+        {{- end }}
 
 		<title>{{- if .IsHome }}{{ .Site.Title }}{{- else }}{{ .Title }} &middot; {{ .Site.Title }}{{- end }}</title>
+
+        <!--Bootstrap -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
 		<!-- CSS -->
 		{{- $inServerMode	:= .Site.IsServer }}
@@ -18,8 +21,9 @@
 		<link rel="stylesheet" href="{{ "css/fonts.css" | relURL }}">
 		{{ range .Site.Params.css -}}
 			<link rel="stylesheet" href="{{ . | relURL }}">
-		{{ end -}}
+        {{ end -}}
 
+     
 		<!-- Favicon -->
 		<link rel="icon" type="image/png" sizes="32x32" href="{{ "/favicon-32x32.png" | relURL }}">
 		<link rel="icon" type="image/png" sizes="16x16" href="{{ "/favicon-16x16.png" | relURL }}">
@@ -30,16 +34,4 @@
         
         {{ partial "headers/mathjax.html" . }}
         {{ partial "headers/twitter_card.html" . }}
-
-        <script>
-            function toggleDiv(id) {
-                const div = document.getElementById(id);
-                console.log(typeof div.style.display)
-                if (div.style.display === "initial") {
-                    div.style.display = "none";
-                } else {
-                    div.style.display = "initial";
-                }
-            }
-        </script>
 	</head>
