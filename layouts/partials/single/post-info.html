@@ -10,4 +10,13 @@
         <br>
         <span>{{ i18n "on" }}&nbsp;</span><time datetime="{{ .PublishDate }}">{{ i18n "publishdate" . }}</time>
     {{- end }}
+
+    <br>
+    <span>in</span>
+
+    <div>
+        {{ range $category := .Params.Categories}}
+            <span class="text-info text-monospace font-weight-lighter">{{ $category }}</span>
+        {{ end }}
+    </div>
 </div>

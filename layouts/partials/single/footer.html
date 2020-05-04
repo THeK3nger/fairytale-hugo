@@ -3,3 +3,9 @@ This is a placeholder partial for the post footer. Create a file called
 layouts/partials/single/footer.html in your own site to overwrite this
 placeholder.
 -->
+<footer>
+    <div class="post-line"></div>
+    {{ range $tag := .Params.Tags }}
+    <a href="{{ $.Site.BaseURL }}tags/{{ $tag | urlize }}" class="text-monospace badge badge-secondary">{{ $tag }}</a>
+    {{ end}}
+</footer>
