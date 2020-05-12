@@ -45,4 +45,9 @@
         
         {{ partial "headers/mathjax.html" . }}
         {{ partial "headers/twitter_card.html" . }}
+
+        {{- if .Site.Params.fontAwesomeKit }}
+        <!-- FontAwesome -->
+        <script src="{{ .Site.Params.fontAwesomeKit }}" crossorigin="anonymous"></script>
+        {{- end }}
 	</head>

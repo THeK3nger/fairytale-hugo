@@ -1,11 +1,11 @@
-		<footer>
-			<span>
-			&copy; <time datetime="{{ now }}">{{ now.Format "2006" }}</time>{{ .Site.Author.name }}. {{ i18n "generator" | safeHTML }}
-            </span>
-            {{- if .Site.Params.privacyPolicy}}
-            <span>
-                — 
-                <a href="{{ $.Site.BaseURL }}{{ .Site.Params.privacyPolicy }}">Privacy Policy</a>
-            </span>
-            {{- end }}
-		</footer>
+<footer class="navbar navbar-light">
+    {{ partial "social.html" . }}
+    <span>
+    &copy; <time datetime="{{ now }}">{{ now.Format "2006" }}</time>{{ .Site.Author.name }}. {{ i18n "generator" | safeHTML }}
+    </span>
+    {{- if .Site.Params.privacyPolicy}}
+    <span>
+        <a href="{{ $.Site.BaseURL }}{{ .Site.Params.privacyPolicy }}">Privacy Policy</a>
+    </span>
+    {{- end }}
+</footer>
