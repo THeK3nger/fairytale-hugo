@@ -12,16 +12,20 @@
 <div class="post-featured-image" style="background-image: url('{{$img}}')"></div>
 
 <main>
-	<div class="post">
+	<article class="post">
+        <header>
         {{ partial "single/post-info.html" . }}
         {{ partial "single/title.html" . }}
+        </header>
 
         {{ partial "single/header.html" . }}
-
+        
+        <section>
 		{{ .Content }}
+        </section>
 
 		{{ partial "single/footer.html" . }}
-    </div>
+    </article>
     
     <nav>
         <ul class="pagination justify-content-center simple-page">
