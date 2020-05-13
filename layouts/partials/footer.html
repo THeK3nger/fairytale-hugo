@@ -1,11 +1,13 @@
-<footer class="navbar navbar-light">
-    {{ partial "social.html" . }}
-    <span>
-    &copy; <time datetime="{{ now }}">{{ now.Format "2006" }}</time>{{ .Site.Author.name }}. {{ i18n "generator" | safeHTML }}
-    </span>
-    {{- if .Site.Params.privacyPolicy}}
-    <span>
-        <a href="{{ $.Site.BaseURL }}{{ .Site.Params.privacyPolicy }}">Privacy Policy</a>
-    </span>
-    {{- end }}
+<footer class="navbar navbar-light bg-white mt-20">
+    <div class="d-flex flex-wrap align-content-center w-100">
+        <div class="social cointainer text-dark flex-grow-1 py-2">
+        {{ partial "social.html" . }}
+        </div>
+        <span class="navbar-text flex-grow-1">
+        &copy; <time datetime="{{ now }}">{{ now.Format "2006" }}</time>{{ .Site.Author.name }}. {{ i18n "generator" | safeHTML }}
+        </span>
+        {{- if .Site.Params.privacyPolicy}}
+        <a class="navabar-link py-2 flex-grow-1" href="{{ $.Site.BaseURL }}{{ .Site.Params.privacyPolicy }}">Privacy Policy</a>
+        {{- end }}
+    </div>
 </footer>
