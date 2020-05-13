@@ -18,6 +18,12 @@
                 </a>
             </li>
         {{ end }}
+        {{- if .Site.Params.Social.twitter -}}
+        <li class="nav-item text-center"><a href="https://twitter.com/{{ .Site.Params.Social.twitter }}" class="nav-link text-primary"><i class="fab fa-twitter"></i></a></li>
+        {{- end -}}
+        {{- if .Site.Params.Social.rss -}}
+        <li class="nav-item text-center"><a href="{{ .Site.Params.Social.rss }}" class="nav-link text-primary"><i class="fas fa-rss-square"></i></a></li>
+        {{- end -}}
         </ul>
     </div>
 </nav>
