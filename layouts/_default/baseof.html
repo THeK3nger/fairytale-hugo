@@ -2,8 +2,9 @@
 <html lang="{{ .Site.LanguageCode | default "en" }}">
     {{ partial "head.html" . }}
     <body>
+        {{ partialCached "navbar.html" . }}
+        
         <div class="container-md" style="max-width:900px;">
-        {{ partial "navbar.html" . }}
         {{ block "main" . }}{{ end }}
         </div>
 

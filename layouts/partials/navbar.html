@@ -1,5 +1,5 @@
 
-<nav class="navbar navbar-expand-lg navbar-light bg-white">
+<nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-between">
     <a class="navbar-brand" href="{{ "/" | relURL }}">
         <img src="{{ .Site.Params.logo }}" class="d-inline-block align-middle mr-2" style="height: 50px; width: 50px;" />
         <span class="font-weight-bold">{{ .Site.Title }}</span>
@@ -8,7 +8,7 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav mx-auto">
+        <ul class="navbar-nav ml-auto">
         {{ range .Site.Menus.main }}
             <li class="nav-item text-center">
                 <a class="nav-link" href="{{ .URL }}">
