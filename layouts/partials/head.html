@@ -43,8 +43,8 @@
 		<!-- RSS -->
         <link href="{{ with .OutputFormats.Get "RSS" }}{{ .RelPermalink }}{{ end }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
         
-        {{ partial "headers/mathjax.html" . }}
-        {{ partial "headers/twitter_card.html" . }}
+        {{ partialCached "headers/mathjax.html" . }}
+        {{ partialCached "headers/twitter_card.html" . }}
 
         {{- if .Site.Params.fontAwesomeKit }}
         <!-- FontAwesome -->

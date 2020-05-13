@@ -1,0 +1,24 @@
+{{- if .Site.Params.related }}
+<section class="py-2">
+{{ $related := .Site.RegularPages.Related . | first 3 }}
+{{ with $related }}
+<div class="card-group">
+    {{ range . }}
+
+    {{ $img := partial "elements/get-header.html" (dict "context" . "sizes" "450x200") }}
+    <div class="card">
+        <img src="{{ $img }}" class="card-img-top" alt="Header Image" loading="lazy" />
+        <div class="card-body">
+            <h5 class="card-title">{{ .Title }}</h5>
+            <p class="card-text text-justify">{{ .Summary | truncate 200 | plainify }}</p>
+            <a href="{{ .Permalink }}" class="text-monospace stretched-link">Read</a>
+        </div>
+        <div class="card-footer">
+            <small><time class="text-muted" datetime="{{ .PublishDate }}">{{ i18n "publishdate" . }}</time></small>
+        </div>
+    </div>
+	{{ end }}
+</div>
+{{ end }}
+</section>
+{{- end }}

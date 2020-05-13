@@ -1,31 +1,21 @@
 <div  class="catalogue-item">
     
-        {{ $cropMethod := .Params.crop }}
-        {{ if not $cropMethod}}
-        {{ $cropMethod = "smart" }}
-        {{ end }}
-        {{- $image := .Resources.GetMatch "header" -}}
-        {{ if $image }}
-            {{ $image := $image.Fill (print "900x405" " " $cropMethod) }}
-            {{ $imageUrl := $image.Permalink }}
-            {{ $.Scratch.Set "imageUrl" $imageUrl }}
-        {{ end }}
+    {{ $img := partial "elements/get-header.html" (dict "context" . "sizes" "900x405") }}
 
-        {{ $img := $.Scratch.Get "imageUrl" }}
-        <div class="d-flex justify-content-between">
-            <time datetime="{{ .PublishDate }}" class="catalogue-time">{{ i18n "publishdate" . }}</time>
-            <div>
-            {{ range $category := .Params.Categories }}
-            <a href="{{ $.Site.BaseURL }}categories/{{ $category | urlize }}"><span class="badge badge-pill badge-info text-uppercase text-monospace">{{ $category }}</span></a>
-            {{ end }}
-            </div>
+    <div class="d-flex justify-content-between">
+        <time datetime="{{ .PublishDate }}" class="catalogue-time">{{ i18n "publishdate" . }}</time>
+        <div>
+        {{ range $category := .Params.Categories }}
+        <a href="{{ $.Site.BaseURL }}categories/{{ $category | urlize }}"><span class="badge badge-pill badge-info text-uppercase text-monospace">{{ $category }}</span></a>
+        {{ end }}
         </div>
-        <a href="{{ .Permalink }}">
-        <h1 class="catalogue-title">{{ .Title }}</h1>
-        <div class="catalogue-line"></div>
-        <img class="img-fluid rounded catalogue-image" loading="lazy" src="{{$img}}" />
-        </a>
-        <p class="catalogue-summary text-justify">
-        {{ if isset .Params "summary" }}{{ .Params.Summary | markdownify }}{{ else }}{{ .Summary }}{{ end }}
-        </p>
+    </div>
+    <a href="{{ .Permalink }}">
+    <h1 class="catalogue-title">{{ .Title }}</h1>
+    <div class="catalogue-line"></div>
+    <img class="img-fluid rounded catalogue-image" loading="lazy" src="{{$img}}" />
+    </a>
+    <p class="catalogue-summary text-justify">
+    {{ if isset .Params "summary" }}{{ .Params.Summary | markdownify }}{{ else }}{{ .Summary }}{{ end }}
+    </p>
 </div>
