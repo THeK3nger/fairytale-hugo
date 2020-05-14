@@ -1,13 +1,6 @@
 {{ define "main" }}
 
-{{- $image := .Resources.GetMatch "header" -}}
-{{ if $image }}
-    {{ $image := $image.Fill "1280x60 smart" }}
-    {{ $imageUrl := $image.Permalink }}
-    {{ $.Scratch.Set "imageUrl" $imageUrl }}
-{{ end }}
-
-{{ $img := $.Scratch.Get "imageUrl" }}
+{{ $img := partial "elements/get-header.html" (dict "context" . "sizes" "1280x60") }}
 
 <div class="post-featured-image" style="background-image: url('{{$img}}')"></div>
 

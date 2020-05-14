@@ -7,6 +7,8 @@
     {{ $image := $image.Fill (print .sizes " " $cropMethod) }}
     {{ $imageUrl := $image.Permalink }}
     {{ $.context.Scratch.Set "imageUrl" $imageUrl }}
+{{ else }}
+    {{ $.context.Scratch.Set "imageUrl" $.context.Site.Params.defaultPostImage }}
 {{ end }}
 
 {{ return $.context.Scratch.Get "imageUrl" }}
