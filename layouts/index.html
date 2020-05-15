@@ -4,8 +4,13 @@
 	{{ partial "index/introduction.html" . }}
 
 	<div class="catalogue">
-		{{ range (.Paginate (where .Site.RegularPages "Type" "blog")).Pages  }}
-			{{ .Render "summary" }}
+        {{ range (.Paginate (where .Site.RegularPages "Type" "in" site.Params.mainSections)).Pages  }}
+            {{- if eq .Type "blog"}}
+            {{ .Render "summary" }}
+            {{- end }}
+            {{- if eq .Type "link"}}
+            {{ .Render "summaryLink" }}
+            {{- end }}
 		{{ end }}
 	</div>
 

@@ -1,0 +1,18 @@
+<div  class="catalogue-item">
+    <div class="d-flex justify-content-between">
+        <time datetime="{{ .PublishDate }}" class="catalogue-time">{{ i18n "publishdate" . }}</time>
+        <div>
+        {{ range $category := .Params.Categories }}
+        <a href="{{ $.Site.BaseURL }}categories/{{ $category | urlize }}"><span class="badge badge-pill badge-info text-uppercase text-monospace">{{ $category }}</span></a>
+        {{ end }}
+        </div>
+    </div>
+    <a href="{{ .Params.link }}">
+    <h1 class="catalogue-title text-info">
+        {{ .Title }} <span class="badge badge-info text-monospace"><i class="fas fa-link"></i></span></h1>
+    <div class="catalogue-line"></div>
+    </a>
+    <p class="catalogue-summary text-justify">
+    {{ if isset .Params "summary" }}{{ .Params.Summary | markdownify }}{{ else }}{{ .Summary }}{{ end }}
+    </p>
+</div>
