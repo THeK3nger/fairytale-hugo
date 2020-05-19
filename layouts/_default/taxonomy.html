@@ -4,7 +4,11 @@
     <h1>{{ strings.FirstUpper .Data.Singular }} <span class="badge badge-info text-monospace">{{ .Title }}</span></h1>
 	<div class="catalogue">
 		{{ range (.Paginate .Pages).Pages }}
-			{{ .Render "summary" }}
+            {{- if eq .Type "link"}}
+            {{ .Render "summaryLink" }}
+            {{- else }}
+            {{ .Render "summary" }}
+            {{- end }}
 		{{ end }}
 	</div>
 	

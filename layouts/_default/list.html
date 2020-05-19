@@ -3,7 +3,11 @@
 <main>
 	<div class="catalogue">
 		{{ range (.Paginate .Pages).Pages }}
-			{{ .Render "summary" }}
+            {{- if eq .Type "link"}}
+            {{ .Render "summaryLink" }}
+            {{- else }}
+            {{ .Render "summary" }}
+            {{- end }}
 		{{ end }}
 	</div>
     
