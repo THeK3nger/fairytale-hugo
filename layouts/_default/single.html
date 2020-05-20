@@ -22,7 +22,9 @@
 
     {{ partial "elements/related.html" . }}
 
-    {{ template "_internal/disqus.html" . }}
+    {{- if ne .Params.comments false }}
+        {{ template "_internal/disqus.html" . }}
+    {{- end }}
     
     <nav>
         <ul class="pagination justify-content-center simple-page">
