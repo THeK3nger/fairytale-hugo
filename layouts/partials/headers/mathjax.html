@@ -1,7 +1,7 @@
 {{- $defaultMathjax := .Site.Data.config.default.mathjax -}}
 {{- $mathjax := ( or .Site.Data.config.mathjax $defaultMathjax ) -}}
 
-<!-- MathJax-->>
+<!-- MathJax-->
 <script type='text/x-mathjax-config'>
   MathJax.Hub.Config(
     {{- $mathjax.config | jsonify -}}
