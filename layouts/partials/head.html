@@ -33,11 +33,15 @@
 		<!-- RSS -->
         <link href="{{ with .OutputFormats.Get "RSS" }}{{ .RelPermalink }}{{ end }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
         
+
+        {{- if eq .Params.mathjax true -}}
         {{ partialCached "headers/mathjax.html" . }}
+        {{- end -}}
         {{ partial "headers/twitter_card.html" . }}
 
         {{- if .Site.Params.fontAwesomeKit }}
         <!-- FontAwesome -->
         <script src="{{ .Site.Params.fontAwesomeKit }}" crossorigin="anonymous"></script>
         {{- end }}
+                
 	</head>

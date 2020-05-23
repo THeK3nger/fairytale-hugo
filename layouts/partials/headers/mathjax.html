@@ -1,8 +1,7 @@
 {{- $defaultMathjax := .Site.Data.config.default.mathjax -}}
 {{- $mathjax := ( or .Site.Data.config.mathjax $defaultMathjax ) -}}
 
-{{- if eq .Params.mathjax true -}}
-
+<!-- MathJax-->>
 <script type='text/x-mathjax-config'>
   MathJax.Hub.Config(
     {{- $mathjax.config | jsonify -}}
@@ -10,5 +9,3 @@
 </script>
 
 <script type='text/javascript' async src='{{- $mathjax.library.path -}}{{- with $mathjax.library.config -}}?config={{- . -}}{{- end -}}'></script>
-
-{{- end -}}
