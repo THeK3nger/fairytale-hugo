@@ -1,49 +1,7 @@
-* {
-  @include box-sizing;
-}
-
-html,
-body {
-  color: $default-color;
-  background-color: #fff;
-  line-height: 1.5;
-}
-
-body {
-  -webkit-text-size-adjust: 100%;
-  font-family: $serif-primary;
-  font-size: 14px;
-  overflow-y: scroll;
-
-  @media (min-width: 600px) {
-    font-size: 16px;
-  }
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: $default-shade;
-  font-family: $sans-serif;
-}
-
-a {
-  color: $blue;
-  text-decoration: none;
-}
-
 blockquote {
-  border-left: .25rem solid $grey-2;
-  color: $grey-1;
-  margin: .8rem 0;
+  border-left: .25rem solid $gray-600;
+  color: $blockquote-small-color;
   padding: .5rem 1rem;
-
-  p:last-child {
-    margin-bottom: 0;
-  }
 
   @media (min-width: 600px) {
     padding: 0 5rem 0 1.25rem;
@@ -53,8 +11,4 @@ blockquote {
 img {
   display: block;
   max-width: 100%;
-}
-
-td {
-  vertical-align: top;
 }

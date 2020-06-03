@@ -17,12 +17,12 @@ footer,
 
   a {
     color: $default-color;
-    font-family: $sans-serif;
+    font-family: $font-family-sans-serif;
   }
 }
 
 footer {
-  font-family: $serif-secondary;
+  font-family: $font-family-serif;
   padding: 2rem 0;
   text-align: center;
   font-size: .8rem;
