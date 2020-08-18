@@ -1,52 +1,52 @@
 {{ with .Site.Params.Social.twitter }}
-<a class="mx-2 text-dark" href="https://twitter.com/{{.}}" rel="me"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
+<a class="mx-2 text-dark" href="https://twitter.com/{{.}}" title="Twitter" rel="me"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
 {{ end }}
 {{ with .Site.Params.Social.facebook }}
-<a class="mx-2 text-dark" href="https://facebook.com/{{.}}" rel="me"><i class="fab fa-facebook-f"></i></a>
+<a class="mx-2 text-dark" href="https://facebook.com/{{.}}" title="Facebbok" rel="me"><i class="fab fa-facebook-f"></i></a>
 {{ end }}
 {{ with .Site.Params.social.github }}
-<a class="mx-2 text-dark" href="https://github.com/{{.}}" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+<a class="mx-2 text-dark" href="https://github.com/{{.}}" title="GitHub" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
 {{ end }}
 {{ with .Site.Params.social.bitbucket }}
-<a class="mx-2 text-dark" href="https://bitbucket.org/{{.}}" rel="me"><i class="fab fa-bitbucket fa-lg" aria-hidden="true"></i></a>
+<a class="mx-2 text-dark" href="https://bitbucket.org/{{.}}" title="BitBucket" rel="me"><i class="fab fa-bitbucket fa-lg" aria-hidden="true"></i></a>
 {{ end }}
 {{ $gitlab_domain := "gitlab.com" }}
 {{ with .Site.Params.social.custom_gitlab_domain }}
     {{ $gitlab_domain = . }}
 {{ end }}
 {{ with .Site.Params.social.gitlab }}
-<a class="mx-2 text-dark" href="https://{{ $gitlab_domain }}/{{.}}" rel="me"><i class="fab fa-gitlab fa-lg" aria-hidden="true"></i></a>
+<a class="mx-2 text-dark" href="https://{{ $gitlab_domain }}/{{.}}" title="Gitlab" rel="me"><i class="fab fa-gitlab fa-lg" aria-hidden="true"></i></a>
 {{ end }}
 {{ with .Site.Params.social.instagram }}
-<a class="mx-2 text-dark" href="https://instagram.com/{{.}}" rel="me"><i class="fab fa-instagram fa-lg" aria-hidden="true"></i></a>
+<a class="mx-2 text-dark" href="https://instagram.com/{{.}}" title="Instagram" rel="me"><i class="fab fa-instagram fa-lg" aria-hidden="true"></i></a>
 {{ end }}
 {{ with .Site.Params.social.linkedin }}
-<a class="mx-2 text-dark" href="https://linkedin.com/in/{{.}}" rel="me"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+<a class="mx-2 text-dark" href="https://linkedin.com/in/{{.}}" title="Linkedin" rel="me"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
 {{ end }}
 {{ with .Site.Params.social.stackoverflow }}
-<a class="mx-2 text-dark" href="https://stackoverflow.com/users/{{.}}" rel="me"><i class="fab fa-stack-overflow fa-lg" aria-hidden="true"></i></a>
+<a class="mx-2 text-dark" href="https://stackoverflow.com/users/{{.}}" title="Stackoverflow" rel="me"><i class="fab fa-stack-overflow fa-lg" aria-hidden="true"></i></a>
 {{ end }}
 {{ with .Site.Params.social.medium}}
-<a class="mx-2 text-dark" href="https://medium.com/@{{.}}" rel="me"><i class="fab fa-medium fa-lg" aria-hidden="true"></i></a>
+<a class="mx-2 text-dark" href="https://medium.com/@{{.}}" title="Medium" rel="me"><i class="fab fa-medium fa-lg" aria-hidden="true"></i></a>
 {{ end }}
 {{ with .Site.Params.social.xing }}
-<a class="mx-2 text-dark" href="https://www.xing.com/profile/{{.}}" rel="me"><i class="fab fa-xing fa-lg" aria-hidden="true"></i></a>
+<a class="mx-2 text-dark" href="https://www.xing.com/profile/{{.}}" title="Xing" rel="me"><i class="fab fa-xing fa-lg" aria-hidden="true"></i></a>
 {{ end }}
 {{ with .Site.Params.social.keybase }}
-<a class="mx-2 text-dark" href="https://keybase.io/{{.}}" rel="me"><i class="fab fa-keybase fa-lg" aria-hidden="true"></i></a>
+<a class="mx-2 text-dark" href="https://keybase.io/{{.}}" title="Keybase" rel="me"><i class="fab fa-keybase fa-lg" aria-hidden="true"></i></a>
 {{ end }}
 {{ with .Site.Params.social.telegram }}
-<a class="mx-2 text-dark" href="https://t.me/{{.}}" rel="me"><i class="fab fa-telegram fa-lg" aria-hidden="true"></i></a>
+<a class="mx-2 text-dark" href="https://t.me/{{.}}" title="Telegram" rel="me"><i class="fab fa-telegram fa-lg" aria-hidden="true"></i></a>
 {{ end }}
 {{ with .Site.Params.social.aboutme }}
-&nbsp;<a class="mx-2 text-dark"  href="https://about.me/{{.}}"><i class="fas fa-address-card fa-lg" aria-hidden="true"></i></a>
+&nbsp;<a class="mx-2 text-dark"  title="About.Me" href="https://about.me/{{.}}"><i class="fas fa-address-card fa-lg" aria-hidden="true"></i></a>
 {{ end }}
 {{ with .Site.Params.social.orcid }}
-<a class="mx-2 text-dark" href="https://orcid.org/{{.}}" rel="me"><i class="fab fa-orcid fa-lg" aria-hidden="true"></i></a>
+<a class="mx-2 text-dark" href="https://orcid.org/{{.}}" title="Orcid" rel="me"><i class="fab fa-orcid fa-lg" aria-hidden="true"></i></a>
 {{end}}
 {{ with .Site.Params.social.email }}
-<a class="mx-2 text-dark" href="mailto:{{.}}" rel="me"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
+<a class="mx-2 text-dark" href="mailto:{{.}}" title="Email" rel="me"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
 {{ end }}
 {{ with .Site.Params.Social.rss }}
-<a href="{{ . }}" class="mx-2 text-dark"><i class="fas fa-rss-square fa-lg" aria-hidden="true"></i></a></li>
+<a href="{{ . }}" class="mx-2 text-dark" title="RSS" ><i class="fas fa-rss-square fa-lg" aria-hidden="true"></i></a></li>
 {{ end }}
