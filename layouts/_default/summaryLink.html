@@ -3,13 +3,13 @@
         <time datetime="{{ .PublishDate }}" class="catalogue-time">{{ i18n "publishdate" . }}</time>
         <div>
         {{ range $category := .Params.Categories }}
-        <a href="{{ $.Site.BaseURL }}categories/{{ $category | urlize }}"><span class="badge badge-pill badge-primary text-uppercase text-monospace">{{ $category }}</span></a>
+        <a href="{{ $.Site.BaseURL }}categories/{{ $category | urlize }}"><span class="badge rounded-pill badge-primary text-uppercase font-monospace">{{ $category }}</span></a>
         {{ end }}
         </div>
     </div>
     <a href="{{ .Params.link }}">
     <h1 class="catalogue-title text-primary">
-        {{ .Title }} <span class="badge badge-primary text-monospace"><i class="fas fa-link"></i></span></h1>
+        {{ .Title }} <span class="badge badge-primary font-monospace"><i class="fas fa-link"></i></span></h1>
     <div class="catalogue-line"></div>
     </a>
     <p class="catalogue-summary text-justify">

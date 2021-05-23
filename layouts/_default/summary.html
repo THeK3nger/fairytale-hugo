@@ -6,14 +6,14 @@
         <time datetime="{{ .PublishDate }}" class="catalogue-time">{{ i18n "publishdate" . }}</time>
         <div>
         {{ range $category := .Params.Categories }}
-        <a href="{{ $.Site.BaseURL }}categories/{{ $category | urlize }}"><span class="badge badge-pill badge-primary text-uppercase text-monospace">{{ $category }}</span></a>
+        <a href="{{ $.Site.BaseURL }}categories/{{ $category | urlize }}"><span class="badge † bg-primary text-uppercase font-monospace">{{ $category }}</span></a>
         {{ end }}
         </div>
     </div>
     <a href="{{ .Permalink }}">
     <h1 class="catalogue-title">{{ .Title }}</h1>
     <div class="catalogue-line"></div>
-    <img class="img-fluid rounded catalogue-image" alt="Featured Image for {{ .Title }}" loading="lazy" src="{{$img}}" />
+    <img class="img-fluid rounded catalogue-image" alt="Featured Image for {{ .Title }}" height="405px" loading="lazy" src="{{$img}}" />
     </a>
     <p class="catalogue-summary text-justify">
     {{ if isset .Params "summary" }}{{ .Params.Summary | markdownify }}{{ else }}{{ .Summary }}{{ end }}

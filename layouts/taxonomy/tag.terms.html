@@ -3,7 +3,7 @@
     <h1>{{ .Title }}</h1>
     <div class="container-fluid text-center">
     {{- range .Data.Terms.ByCount -}}
-    <a href="{{ .Page.Permalink}}" type="button" class="btn btn-sm btn-outline-primary text-monospace m-1">
+    <a href="{{ .Page.Permalink}}" type="button" class="btn btn-sm btn-outline-primary font-monospace m-1">
         {{ .Page.Title }} <span class="badge badge-light">{{ .Count }}</span>
     </a>
     {{- end -}}

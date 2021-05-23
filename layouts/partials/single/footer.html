@@ -7,7 +7,7 @@ placeholder.
     <div class="post-line"></div>
     {{- if .Params.Tags }}
     {{ range $tag := .Params.Tags }}
-    <a href="{{ $.Site.BaseURL }}tags/{{ $tag | urlize }}" class="text-monospace badge badge-secondary">{{ $tag }}</a>
+    <a href="{{ $.Site.BaseURL }}tags/{{ $tag | urlize }}" class="font-monospace badge badge-secondary">{{ $tag }}</a>
     {{ end}}
     {{- end }}
 </footer>

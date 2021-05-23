@@ -10,8 +10,8 @@
         <img src="{{ $img }}" class="card-img-top" alt="Header Image" loading="lazy" />
         <div class="card-body">
             <h5 class="card-title">{{ .Title }}</h5>
-            <p class="card-text text-justify">{{ .Summary | truncate 200 | plainify }}</p>
-            <a href="{{ .Permalink }}" class="text-monospace stretched-link">Read</a>
+            <p class="card-text text-justify">{{ .Summary | truncate 190 | plainify }}</p>
+            <a href="{{ .Permalink }}" class="font-monospace stretched-link">Read</a>
         </div>
         <div class="card-footer">
             <small><time class="text-muted" datetime="{{ .PublishDate }}">{{ i18n "publishdate" . }}</time></small>
