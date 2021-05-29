@@ -13,7 +13,7 @@
     <a href="{{ .Permalink }}">
     <h1 class="catalogue-title">{{ .Title }}</h1>
     <div class="catalogue-line"></div>
-    <img class="img-fluid rounded catalogue-image" alt="Featured Image for {{ .Title }}" width="800px" height="405px" loading="lazy" src="{{$img}}" />
+    <img class="img-fluid rounded catalogue-image" alt="Featured Image for {{ .Title }}" width="870px" height="405px" loading="lazy" src="{{$img}}" />
     </a>
     <p class="catalogue-summary text-justify">
     {{ if isset .Params "summary" }}{{ .Params.Summary | markdownify }}{{ else }}{{ .Summary }}{{ end }}
