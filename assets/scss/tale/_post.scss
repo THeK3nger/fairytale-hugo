@@ -13,9 +13,7 @@
   }
 
   &-title {
-    // From here: https://www.madebymike.com.au/writing/fluid-type-calc-examples/
-    // min + (max - min) * (100vw - min threshold) / (max threshold - min threshold)
-    font-size: calc(20px + (50 - 20) * ((100vw - 300px) / (1300 - 300)));
+    @include font-size(3rem);
     margin: 1rem 0;
     text-align: center;
   }
@@ -37,7 +35,7 @@
   }
 
   p {
-    margin: 0 0 1rem;
+    //margin: 0 0 1rem;
     text-align: justify;
   }
 

@@ -22,7 +22,7 @@
   }
 
   &-title {
-    font-size: 2rem;
+    @include font-size(2rem);
     font-weight: 700;
   }
 
@@ -34,8 +34,8 @@
   }
 
   &-image {
-      margin-top: 15px;
-      margin-bottom: 15px;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
   }
 
   &-summary {
